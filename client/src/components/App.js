@@ -2,20 +2,12 @@ import React, { Component } from 'react';
 import logo from '../res/logo.svg';
 import '../styles/App.css';
 
+import BluetoothHelper from '../utils/BluetoothHelper';
+
 class App extends Component {
 
-  requestDevice(){
-    navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-    .then(device => {
-      console.log('> Name:             ' + device.name);
-      console.log('> Id:               ' + device.id);
-      console.log('> Allowed Services: ' + device.uuids.join('\n' + ' '.repeat(20)));
-      console.log('> Connected:        ' + device.gatt.connected);
-    }).then(device => { console.log(device); })
-    .catch(error => { console.log(error); });
-  }
+  bluetoothHelper = new BluetoothHelper();
 
-  
   render() {
     return (
       <div className="App">
@@ -26,7 +18,7 @@ class App extends Component {
       <p className="App-intro">
       hello
       </p>
-      <button onClick={()=>this.requestDevice()}>requestDevice</button>
+      <button onClick={()=>this.bluetoothHelper.requestDevice()}>requestDevice</button>
       </div>
       );
   }
