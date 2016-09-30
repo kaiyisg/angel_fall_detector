@@ -3,10 +3,12 @@ import logo from '../res/logo.svg';
 import '../styles/App.css';
 
 import BluetoothHelper from '../utils/BluetoothHelper';
+import HeartrateMonitor from '../utils/HeartrateMonitor';
 
 class App extends Component {
 
   bluetoothHelper = new BluetoothHelper();
+  heartrateMonitor = new HeartrateMonitor();
 
   render() {
     return (
@@ -18,7 +20,8 @@ class App extends Component {
       <p className="App-intro">
       hello
       </p>
-      <button onClick={()=>this.bluetoothHelper.requestDevice()}>requestDevice</button>
+      <button onClick={()=>this.bluetoothHelper.requestDevice()}>bluetooth web api</button>
+      <button onClick={()=>this.heartrateMonitor.requestDevice()}>heartrate</button>
       </div>
       );
   }

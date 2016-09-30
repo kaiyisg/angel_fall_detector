@@ -1,3 +1,14 @@
+export const BATTERY_SERVICE = 'battery_service';
+export const DEVICE_INFORMATION = 'device_information';
+
+export const HEART_RATE = 'heart_rate';
+export const GENERIC_ACCESS = 'generic_access';
+export const HEALTH_THERMOMETER = 'health_thermometer';
+//export const; 
+//export const DEVICE_INFORMATION = 'device_information';
+
+
+
 export default class BluetoothHelper{
 
 	requestDevice(){
